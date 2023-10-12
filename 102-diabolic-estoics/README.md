@@ -79,4 +79,22 @@ CM2 => Deve ser igual que la suma de las esquians del cuadrado.
 
 CM2 => if(n%2==0) El centro del cuadrado multiplicado por 4 deve ser icual a CM2. && La suma de la mitad de cada uno de los lados debe ser igual a CM2.
 
-CM2 => if(n%2==0) La suma de las cifras del con correlacion, vease en el medio de toda la tabla veritical y horizaontalmente. && La suma de las dos casillas centrales debe ser igual a CM2.
+CM2 => if(n%2!=0) La suma de las cifras del con correlacion, vease en el medio de toda la tabla veritical y horizaontalmente. && La suma de las dos casillas centrales debe ser igual a CM2 * 2.
+
+### Diabolico y Estoico
+Determinar si el cuadrado mágico es "diabólico" =>  
+    std::bool diabolico = false;
+    if(La suma de los números en todas las filas, columnas y diagonales principales debe ser igual a la constante mágica (CM)){
+        diabolico = true;
+        std::cout<<"DIABOLICO";
+    
+Verificar si el cuadrado mágico es "esotérico" =>  
+        if(diabólico && allOkWhit(CM2)){
+            std::cout<<"ESOTERICO";
+        }
+    }
+
+No encontro ni diabolico ni essotérico;
+    else {
+        std::cout<<"NO";
+    }
