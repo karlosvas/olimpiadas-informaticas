@@ -1,0 +1,29 @@
+# Decodicacación de mensajes
+El agente 0069 ha inventado un nuevo método de codicación de mensajes secretos. El
+mensaje original X se codica en dos etapas:
+
+En primer lugar => X se transforma en X'
+reemplazando cada sucesión de caracteres consecutivos que no sean vocales por su inversa;
+
+En segundo lugar => X' se transforma en la sucesión de caracteres X`` obtenida al ir tomando sucesivamente el primer carácter de X'' el último, luego el segundo, luego el penúltimo, etc.
+
+Por ejemplo, si X es Anacleto, agente secreto, X' sería Analceto ,agetnes erceto.
+X'' (elmensaje cifrado) sería Aontaelccreet os e,natge.
+¿Sabrías recuperar el mensaje original a partir de un mensaje cifrado?
+
+**Entrada**
+La entrada está formada por una serie de casos de prueba. Cada caso ocupa una línea y
+representa un mensaje cifrado con el método del agente 0069.
+
+**Salida**
+Para cada caso se escribirá en una línea el mensaje descodicado.
+
+Entrada de ejemplo
+Aontaelccreet os e,natge
+Moeihr aed eacrepbeadln ied o
+AuE ItOoUmbo ,coortriiuq
+
+Salida de ejemplo
+Anacleto, agente secreto
+Me he aprendido el abecedario
+AEIOU, borriquito como tu
