@@ -2,7 +2,7 @@
 El agente 0069 ha inventado un nuevo método de codicación de mensajes secretos. El
 mensaje original X se codica en dos etapas:
 
-En primer lugar => X se transforma en X'
+En primer lugar => X se transforma en X1
 reemplazando cada sucesión de caracteres consecutivos que no sean vocales por su inversa;
 
 En segundo lugar => X' se transforma en la sucesión de caracteres X`` obtenida al ir tomando sucesivamente el primer carácter de X'' el último, luego el segundo, luego el penúltimo, etc.
