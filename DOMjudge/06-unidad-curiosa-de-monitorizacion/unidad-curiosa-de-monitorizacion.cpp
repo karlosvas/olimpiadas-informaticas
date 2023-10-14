@@ -16,7 +16,8 @@ bool solve(){
     int n; cin>>n;
     if(n==0) return false;
 
-    priority_queue<registro> pq; // Como por defecto tiene less, el compilador ya lo estamos comparando = "<".
+    priority_queue<registro> pq;
+    // Como por defecto tiene less, el compilador ya lo estamos comparando = "<".
     for(int i=0; i<n;i++){
         int id,per;
         cin>>id>>per;
@@ -31,7 +32,7 @@ bool solve(){
         cout<<r.id<<"\n";
         pq.push({r.id, r.periodo, r.periodo + r.momento});
     }
-    cout<<"\n";
+    cout<<"---"<<"\n";
     return true;
 };
 

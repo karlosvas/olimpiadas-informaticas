@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <deque>
+#include <string>
 using namespace std;
 
 bool isVocal(char c) {
@@ -31,22 +32,23 @@ string reverseX1ToX(string x2) {
 
 string reverseX2ToX1(string x2) {
     string x1;
-    deque<char> deq;
-    int l = x2.length();
-    if(l %2 == 0) l = l-1;
-        while(l >= 0){
-                // Añade el penúltimo elemento
-                int j = l - 1;
-                deq.push_front(x2[j]);
-                // Añade el último elemento
-                deq.push_back(x2[l]);
-            // Se resta a la longitud dos en cada bucle para pasar a los dos anteriores.
-            l-= 2;
+    // Inicaiamos dos deque para paoder acceder a los impares y los pares.
+    deque<char> deqFront;
+    deque<char> deqEnd;
+    // Recorremos el texto de forma inversa y le damos so correspondiente valor a cada itineracion de este.
+    for (int i = x2.length(); i >= 0; --i) {
+        if (i % 2 == 0) {
+            // Si es par le damos su correspodneinte valor delante de la cola de el frente.
+            deqFront.push_front(x2[i]);
+        } else {
+            // Si la iteración es inpar le añadimos su correspoendiente valor, detras de la cola.
+            deqEnd.push_back(x2[i]);
         }
-    for (char c: deq){
-        // Se da el valor de la string con los valores del deque.
-        x1 += c;
     }
+
+    deqFront.insert(deqFront.end(), deqEnd.begin(), deqEnd.end());
+    // Una vez echo esto lo concatenamos y lo guardamos en x1 para retornarlo.
+    for (char c : deqFront) x1+= c;
     return x1;
 }
 
