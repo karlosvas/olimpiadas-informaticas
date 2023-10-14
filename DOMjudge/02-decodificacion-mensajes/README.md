@@ -5,10 +5,10 @@ mensaje original X se codica en dos etapas:
 En primer lugar => X se transforma en X1
 reemplazando cada sucesión de caracteres consecutivos que no sean vocales por su inversa;
 
-En segundo lugar => X' se transforma en la sucesión de caracteres X`` obtenida al ir tomando sucesivamente el primer carácter de X'' el último, luego el segundo, luego el penúltimo, etc.
+En segundo lugar => X1 se transforma en la sucesión de caracteres X2 obtenida al ir tomando sucesivamente el primer carácter de X2 el último, luego el segundo, luego el penúltimo, etc.
 
-Por ejemplo, si X es Anacleto, agente secreto, X' sería Analceto ,agetnes erceto.
-X'' (elmensaje cifrado) sería Aontaelccreet os e,natge.
+Por ejemplo, si X es Anacleto, agente secreto, X1 sería Analceto ,agetnes erceto.
+X2 (el mensaje cifrado) sería Aontaelccreet os e,natge.
 ¿Sabrías recuperar el mensaje original a partir de un mensaje cifrado?
 
 **Entrada**
@@ -21,7 +21,7 @@ Para cada caso se escribirá en una línea el mensaje descodicado.
 Entrada de ejemplo
 Aontaelccreet os e,natge
 Moeihr aed eacrepbeadln ied o
-AuE ItOoUmbo ,coortriiuq
+AuE ItOoUmbo  ,coortriiuq
 
 Salida de ejemplo
 Anacleto, agente secreto

@@ -2,7 +2,6 @@
 #include <set>
 using namespace std;
 
-//135
 int sumascubos (int n){
     int suma = 0;
     while(n > 0){
@@ -13,19 +12,30 @@ int sumascubos (int n){
     return suma;
 }
 
-bool cubifinito(int n){
+void cubifinito(int n){
     set<int> cjto;
-    while(n != 1 && !cjto.count(n)){
-        cjto.insert(n);
-        n = sumascubos(n);
+    while(!cjto.count(n)){
+        if(n == 1){
+            cout<<n<<" -> cubinfinito.\n";
+            break;
+        }else {
+            cout<<n<<" - ";
+            cjto.insert(n);
+            n = sumascubos(n);
+        }
+    }
+    if(n != 1){
+        cout<<n<<" -> no cubinfinito.\n";
     }
     return n == 1;
 }
 
 int main(){
-    for (int n = 1; n <= 1000;n++) {
-        if(cubifinito(n))
-        cout<<n<<"\n";
+    int n;
+
+    while(cin>>n){
+        cubifinito(n);
     }
+
     return 0;
 }
