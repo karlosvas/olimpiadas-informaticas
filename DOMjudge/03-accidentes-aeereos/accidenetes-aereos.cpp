@@ -34,7 +34,9 @@ int main() {
             }
             // Independientemente de los demas se añade como par de pilas a accidentes.
             accidentes.push_back(make_pair(fecha, victimas));
-            cout<<resultados[i]<<"\n";
+        }
+        for (string resultado : resultados) {
+            cout << resultado << "\n";
         }
         cout<<"---\n";
     }

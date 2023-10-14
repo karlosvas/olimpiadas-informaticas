@@ -1,39 +1,34 @@
-// ### Apuntes:
-// (-) => Tecla inicio al principio del texto
-// (+) => TEcla Fin que se lleva el cursor al final
-// (*) => Tecla de la flecha derecha
-// (3) => Tecla suprimir, borra la el texto de la de la derecha.
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main(){
-    string tecla;
+    string text;
+    while (cin>>text){
+        // El cursor es a donde esta apuntando para escriir o eliminar en ese indice.
+        int cursor = 0;
+        string resultado;
 
-    while (cin>>tecla){
-        if (tecla == '3') {
+        for (char c : text){
+            if ( c == '-') cursor = 0; // => Incio de la cadena.
+            else if ( c == '+') cursor = resultado.size(); // => Final de la cadena.
+            else if ( c == '*') {
+                if(static_cast<string::size_type>(cursor) < resultado.size()) cursor++;
+            } // => Lo movemos a la derecha. 
+            else if ( c == '3') {
+                // Verificamos que este en rango de out_of_range.
+                if (static_cast<string::size_type>(cursor) + 1 < resultado.length()) resultado.erase(cursor, 1);
+                else resultado.pop_back();
+            } else {
+                // Introducir un nuevo carácter.
+                if (static_cast<string::size_type>(cursor) > resultado.length()) resultado.insert(cursor - 1, 1, c);
+                else {
+                    resultado.insert(cursor, 1, c);
+                }
+                cursor++;
+            }
         }
-        if (){
-        }
-        if (){
-        }
-        if (){
-        }
-        
+        if(!resultado.empty()) cout<<resultado<<"\n";
     }
-    
     return 0;
 }
-
-/*
-Entrada
-OIE
-OIE-333
-dI-3*E-O+
-OIE-3O*3E
-
-Salida de ejemplo
-OIE
-OIE
-OIE
-*/

@@ -36,7 +36,7 @@ string reverseX2ToX1(string x2) {
     deque<char> deqFront;
     deque<char> deqEnd;
     // Recorremos el texto de forma inversa y le damos so correspondiente valor a cada itineracion de este.
-    for (int i = x2.length(); i >= 0; --i) {
+    for (int i = x2.length() - 1; i >= 0; --i) {
         if (i % 2 == 0) {
             // Si es par le damos su correspodneinte valor delante de la cola de el frente.
             deqFront.push_front(x2[i]);
