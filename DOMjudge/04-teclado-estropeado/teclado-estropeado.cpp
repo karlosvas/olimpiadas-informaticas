@@ -13,19 +13,21 @@ int main(){
             if ( c == '-') cursor = 0; // => Incio de la cadena.
             else if ( c == '+') cursor = resultado.size(); // => Final de la cadena.
             else if ( c == '*') {
-                if(static_cast<string::size_type>(cursor) < resultado.size()) cursor++;
-            } // => Lo movemos a la derecha. 
+                // => Lo movemos el cursor hacia la derecha.
+                if (static_cast<string::size_type>(cursor) <= resultado.size() - 1) cursor++;
+            } 
             else if ( c == '3') {
+                // Le damos la nueva posicion al cursor.
                 // Verificamos que este en rango de out_of_range.
-                if (static_cast<string::size_type>(cursor) + 1 < resultado.length()) resultado.erase(cursor, 1);
-                else resultado.pop_back();
-            } else {
-                // Introducir un nuevo carácter.
-                if (static_cast<string::size_type>(cursor) > resultado.length()) resultado.insert(cursor - 1, 1, c);
-                else {
-                    resultado.insert(cursor, 1, c);
+                if (static_cast<string::size_type>(cursor) <= resultado.size() - 1 && cursor >= 0) resultado.erase(cursor, 1);
+                else if (cursor > 0) {
+                    resultado.pop_back();
+                    cursor--;
                 }
-                cursor++;
+            }else {
+                // Introducir un nuevo carácter.
+                    resultado.insert(cursor, 1, c);
+                    cursor++;
             }
         }
         if(!resultado.empty()) cout<<resultado<<"\n";

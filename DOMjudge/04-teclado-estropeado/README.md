@@ -20,7 +20,7 @@ Para cada caso de prueba se mostrará en una línea el texto final que obtendrá
 ### Entrada de ejemplo
 OIE
 OIE-333
-dI-3*E-O+
+dI-3*E-O+ // => OIE
 OIE-3O*3E
 ### Salida de ejemplo
 OIE
