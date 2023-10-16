@@ -1,13 +1,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
 int main() {
     int N;
     while (cin >> N){
-        if(N < 1 || N > 3000) break;
+        if(N < 1 || N > 300000) break;
         // Creamos un par de string y enteros, y resultados para guardar la solución.
         vector<pair<string, int>> accidentes;
         vector<string> resultados;
@@ -18,7 +19,7 @@ int main() {
             int victimas;
             cin>>fecha>>victimas;
             // verificamso si es mayor de 10 elevado a 6;
-            if(victimas > 1e6) break;
+            if(victimas > pow(10,6)) break;
 
             while (!accidentes.empty() && accidentes.back().second <= victimas) {
                 // Si el vector no esta vacio y el segundo elemento es menor o igual que las victimas borrar el ultimo elemento.
@@ -34,9 +35,7 @@ int main() {
             }
             // Independientemente de los demas se añade como par de pilas a accidentes.
             accidentes.push_back(make_pair(fecha, victimas));
-        }
-        for (string resultado : resultados) {
-            cout << resultado << "\n";
+            cout<<resultados[i]<<"\n";
         }
         cout<<"---\n";
     }

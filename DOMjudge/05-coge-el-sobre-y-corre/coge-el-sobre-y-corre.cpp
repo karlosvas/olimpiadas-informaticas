@@ -11,7 +11,8 @@ int main (){
     int n,k;
     while (cin>>n>>k){
         // Terminamos el bucle si no cumple con los requesitos.
-        if(n < 1 || n > 5000 || k > n) break;
+        if(k < 1 && n < 1) break;
+        if(n > 50000) break;
         // Las posibilidades que tiene de que el dineroro se lo lleve el presidente.
         int posibility= n - k + 1;
 
