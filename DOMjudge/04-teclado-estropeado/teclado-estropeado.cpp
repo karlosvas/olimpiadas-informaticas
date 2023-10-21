@@ -1,36 +1,44 @@
 #include <iostream>
+#include <list>
 #include <string>
 using namespace std;
 
-int main(){
-    string text;
-    while (cin>>text){
-        // El cursor es a donde esta apuntando para escriir o eliminar en ese indice.
-        int cursor = 0;
-        string resultado;
+bool solve () {
+    string linea;
+    getline(cin, linea);
 
-        for (char c : text){
-            if ( c == '-') cursor = 0; // => Incio de la cadena.
-            else if ( c == '+') cursor = resultado.size(); // => Final de la cadena.
-            else if ( c == '*') {
-                // => Lo movemos el cursor hacia la derecha.
-                if (static_cast<string::size_type>(cursor) <= resultado.size() - 1) cursor++;
-            } 
-            else if ( c == '3') {
-                // Le damos la nueva posicion al cursor.
-                // Verificamos que este en rango de out_of_range.
-                if (static_cast<string::size_type>(cursor) <= resultado.size() - 1 && cursor >= 0) resultado.erase(cursor, 1);
-                else if (cursor > 0) {
-                    resultado.pop_back();
-                    cursor--;
-                }
-            }else {
-                // Introducir un nuevo carácter.
-                    resultado.insert(cursor, 1, c);
-                    cursor++;
+    if(!cin) return false;
+
+    list<char> resultado;
+    auto it = resultado.begin();
+    for (char c : linea){
+        switch (c){
+        case '-':
+            it = resultado.begin();
+            break;
+        case '+':
+            it = resultado.end();
+            break;
+        case '*':
+            if(it != resultado.end()){
+                ++it;
             }
+            break;
+        case '3':
+            if(it != resultado.end()){
+                it = resultado.erase(it);
+            }
+            break;
+        default:
+            resultado.insert(it, c);
+            break;
         }
-        if(!resultado.empty()) cout<<resultado<<"\n";
     }
+    cout<<string(resultado.begin(), resultado.end())<<"\n";
+    return true;
+}
+
+int main(){
+    while (solve());
     return 0;
 }

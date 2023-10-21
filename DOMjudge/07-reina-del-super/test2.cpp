@@ -20,8 +20,8 @@ int main()
         list<string> listSec;
         queue<char> pila;
         
-        // Transportar datos a una lista
-        for (int num = 0; num < secLine.size(); num++){
+        // Transportar datos a una lista utilizando queue.
+        for (string::size_type num = 0; num < secLine.size(); num++){
             if (secLine[num] == ' ' || num == secLine.size() - 1) {
                 if (num == secLine.size() - 1) pila.push(secLine[num]);
                 string res;
@@ -30,9 +30,7 @@ int main()
                     pila.pop();
                 }
                 listSec.push_back(res);
-            } else {
-            pila.push(secLine[num]);
-            }
+            } else pila.push(secLine[num]);
         }
 
         list<string>::iterator it = listSec.begin();
@@ -41,41 +39,35 @@ int main()
         int ism = 1;
         int i = 0;
 
-        if (n > c) {
-        ism = c + 1;
-        } else {
+        if (n > c) ism = c + 1;
+        else {
             while (it != listSec.end()) {
                 int e = stoi(*it);
-                if(vRow.size() < n){
-                    cout<<"vacio, i es "<< i<<" push de "<<e<<"\n";
+               if (vRow.size() < static_cast<vector<int>::size_type>(n)){
                     vRow.push_back(e);
-                    if(vRow.size() == n){
+                    if(vRow.size() == static_cast<vector<int>::size_type>(n)){
                         i = 0;
                         it++;
                         continue;
                     }
-                }else{
-                    cout<<"no vacio i es "<<i<<" actualizando "<<vRow[i]<<" + "<<e<<"\n";
-                    vRow[i] += e;
-                }
+                }else vRow[i] += e;
                 i++;
                 it++;
             }
         }
         
-        for(int i = 0; i < vRow.size(); i++){
+        // Compara cion de si el actual es mas grande que el siguiente para cambiarse de fila.
+        for(vector<int>::size_type i = 0; i < vRow.size(); i++){
             int a = vRow[i];
             int b = (i + 1 < vRow.size()) ? vRow[i + 1] : 0;
-            if(b != 0){
-                cout<<"a "<<a<<" > b "<<b<<"\n";
-                 if(a > b){
-                ism += 1;
-            }
+                if(b != 0){
+                    if(a > b){
+                    ism += 1;
+                }
             }
         }
-            cout<<"El ism es "<<ism<<"\n";
-        // Atendido en la caja ism;
-        // cout<<ism<<"\n";
+        // Fila en al que deve ir ismael
+        cout<<ism<<"\n";
     }
     return 0;
 }

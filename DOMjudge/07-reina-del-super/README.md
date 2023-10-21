@@ -8,7 +8,8 @@ comprar cualquier cosa con tal de volver a verla. Y da igual
 cuánta gente haya; él siempre se pone a esperar en la fila de
 su caja.
 Pero al llegar hoy al súper se ha llevado una desagradable sorpresa. Al cerebrito de turno
-que gestiona el supermercado le ha dado por instaurar la “fila única”. Ahora en lugar de
+que gestiona el supermercado le ha dado por instaurar la “fila única”.  
+Ahora en lugar de
 haber filas independientes para cada caja, hay una única fila para todas y cuando una caja
 se queda vacía, el primero que ocupa la filla va a ella.
 El gerente del súper seguramente piense que ahora los clientes quedarán más satisfechos

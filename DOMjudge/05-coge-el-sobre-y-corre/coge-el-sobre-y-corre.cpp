@@ -5,16 +5,16 @@
 #include <stack>
 using namespace std;
 
-int main (){
-    // n es el numero de sobres disoponibles
-    // k el numero de sobres cojido para ese caso en concreto.
-    int n,k;
-    while (cin>>n>>k){
-        // Terminamos el bucle si no cumple con los requesitos.
-        if(k < 1 && n < 1) break;
-        if(n > 50000) break;
-        // Las posibilidades que tiene de que el dineroro se lo lleve el presidente.
-        int posibility= n - k + 1;
+#include <iostream>
+
+using namespace std;
+
+bool solve(){
+    int n, k;
+    cin >> n >> k;
+    
+    if (n == 0 | k == 0) return false;
+    int posibility= n - k + 1;
 
         string test;
         cin.ignore();
@@ -29,7 +29,7 @@ int main (){
 
         for(int it = 0; it < posibility; it++){
         stack<int> pila;
-            // Ca posibilidad es un nuevo casos enm el que elije entre k mesajes.
+            // Cada posibilidad es un nuevo caso en el que elije entre k mesajes.
             for(int j= it; j < k + it; j++){
                 // Va eligiendo de k veces dentro de cada posibilidad.
                 if (pila.empty()) pila.push(testList[j]);
@@ -38,6 +38,14 @@ int main (){
             if(it == posibility -1) cout<<pila.top()<<"\n";
             else cout<<pila.top()<<" ";
         }
+    
+    return true;
+}
+
+int main()
+{
+    while(solve()){
     }
+
     return 0;
 }
