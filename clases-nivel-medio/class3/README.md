@@ -26,3 +26,36 @@ using Ejemplo = pair<int, int>
 priority_queue<Caja, vector<Caja>, greater<Caja>> cajas;
 cajas.push({0, i});
 ```
+
+Forma correcta de tranformar un string de numeros a un  vector de enteros:
+
+Podemos utilizar la biblioteca stringstream, conviene cuando se tiene que procesar los elementos de una línea y no sabes cuántos va a haber, porque no te lo han dicho.
+Pero sí sabes que va a haber n elementos, no hace falta.
+
+Por ejemplo, este código conn stringstream =>
+```cpp
+    string test;
+    cin.ignore();
+    getline(cin, test);
+    vector<int> testList;
+    istringstream iss(test);
+
+    int numero;
+    while (iss >> numero) {
+        testList.push_back(numero);
+    }
+```
+Es equivalente a este otro, más sencillo.
+```cpp
+    vector<int> testList(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> testList[i];
+    }
+```
+O a este.
+```cpp
+    vector<int> testList(n);
+    for (int & x : testList) {
+        cin >> x;
+    }
+```
