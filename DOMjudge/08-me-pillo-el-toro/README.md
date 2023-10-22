@@ -29,28 +29,28 @@ Para escribir la lista se utilizará una línea por alumno evaluado. Cada línea
 evaluación. Tras la lista, aparecerá una línea con tres guiones (---).
 
 ## Entrada de ejemplo
-2
-Laureano
-INCORRECTO
-Aldonza
-CORRECTO
-3
-Aldonza
-CORRECTO
-Aldonza
-INCORRECTO
-Laureano
-CORRECTO
-1
-Aldonza Lorenzo
-CORRECTO
-0
+2  
+Laureano  
+INCORRECTO  
+Aldonza  
+CORRECTO  
+3  
+Aldonza  
+CORRECTO  
+Aldonza  
+INCORRECTO  
+Laureano  
+CORRECTO  
+1  
+Aldonza Lorenzo  
+CORRECTO  
+0  
 
 ## Salida de ejemplo
 Aldonza, 1
 Laureano, -1
----
+"---"
 Laureano, 1
----
+"---"
 Aldonza Lorenzo, 1
----
+"---"

@@ -1,8 +1,18 @@
 #include <iostream>
-
+#include <queue>
+#include <map>
 using namespace std;
 
 bool resolve(){
+    int n, e, x, y;
+
+    cin>>n>>e;
+    if(1 < n < 10) return false;
+    if(1 < e < 10) return false;
+    if((1 < x && 1 < y) || (x > 10 && y > 10)) return false;
+
+    map<int> mapShirt;
+
     return true;
 }
 

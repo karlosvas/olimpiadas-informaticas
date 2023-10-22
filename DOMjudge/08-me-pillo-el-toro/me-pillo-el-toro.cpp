@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <unordered_map>
+#include <map>
 
 using namespace std;
 
@@ -10,7 +10,7 @@ bool resolve(){
 
     if(n == 0) return false;
 
-    unordered_map<string, int> authorNotes;
+    map<string, int> authorNotes;
 
     for (int i = 0; i < n; i++) {
         string auth, point;
