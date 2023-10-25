@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <queue>
-#include <map>
 
 using namespace std;
 
@@ -11,7 +10,7 @@ void quest(deque<int> dq){
         pq.push(num);
     }
 
-    // Buscar cuando los numeros se repiten, y guardando los uqe no se repitan.
+    // Buscar cuando los numeros se repiten.
     int test= 0, count = 0;
     deque<int> exa;
 
@@ -28,15 +27,26 @@ void quest(deque<int> dq){
         }
     }
 
-    // Buscando cuando es la primera vez que un número no repetido coinciode para cada uno de los lados.
+    for(int num: exa){
+        cout<<num<<" ";
+    }
+    cout<<"\n";
+
+    for(int num: dq){
+        cout<<num<<" ";
+    }
+    cout<<"\n";
+
     int solI = -1, solD = -1, numD, numI;
 
-    for(deque<int>::size_type i = 0; i < dq.size(); i++){
+    for(auto i = 0; i < dq.size(); i++){
         if(solI == -1){
             numI = dq[i];
+            cout<<"NumeroI: "<<numI<<"\n";
             for(int numE: exa){
                 if(numI == numE){
                     solI = i + 1;
+                    cout<<"SolI: "<<solI<<"\n";
                     break;
                 }
             }
@@ -44,16 +54,17 @@ void quest(deque<int> dq){
         
         if(solD == -1){
             numD = dq[dq.size() - 1 - i];
+            cout<<"NumeroD: "<<numD<<"\n";
             for(int numE: exa){
                 if(numD == numE){
                     solD = i + 1;
+                    cout<<"SolD: "<<solD<<"\n";
                     break;
                 }
             }
         }
     }
 
-    // Mostrando si se a encontrado y si es asi cual se encontro antes.
     string res;
     if(solI == -1 && solD == -1) cout<<"NADA INTERESANTE";
     else if (solI == solD) cout<<solD<<" "<<"CUALQUIERA";
@@ -64,14 +75,13 @@ void quest(deque<int> dq){
 }
 
 bool solve(){
-    map<int, string> mapShirt;
     int n, id;
     // Numero de camisetas que la tienda tiene actualmente (n) en venta;
     cin>>n;
     
     deque<int> dq;
     for(int i = 0; i < n; i++){
-        // Identificadores de los estilos de las camisetas, mismo estilo = mismo identificador (id).
+        // Identificadores de los estilos de las camisetas, mismo estilo = mismo identificador (xi).
         cin>>id;
         dq.push_back(id);
     }
@@ -99,6 +109,7 @@ bool solve(){
             dq.pop_back();
             break;
         case('P'):
+            cout<<"PREGUNTA\n";
             quest(dq);
             break;
         }

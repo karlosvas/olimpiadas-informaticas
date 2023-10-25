@@ -9,8 +9,7 @@ bool resolve(){
     int p,n;
     cin>>p>>n;
 
-    if (p < n || p > 200000 || n > 100000) return false;
-    // Se garantiza que al menos habra una partitura(p) por cada instrumento diferente (n).
+    if (!cin) return false;
 
     int num;
     priority_queue<int> pq;
@@ -19,7 +18,6 @@ bool resolve(){
     for(int i = 0; i< n;i++){
         // Cantidad de músicos que hay para cada uno de los instrumentos;
         cin>>num;
-        if(num > 1000) return false;
         pq.push(num);
     }
 
