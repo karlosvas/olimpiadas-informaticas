@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <queue>
-#include <map>
 
 using namespace std;
 
@@ -11,19 +10,19 @@ void quest(deque<int> dq){
         pq.push(num);
     }
 
-    // Buscar cuando los numeros se repiten, y guardando los uqe no se repitan.
+    // Guardar losq que no se repitan.
     int test= 0, count = 0;
-    deque<int> exa;
+    deque<int> unic;
 
     while (!pq.empty()) {
         int current = pq.top();
         pq.pop();
 
         if (current == test) {
-            exa.pop_back();
+            unic.pop_back();
             count++;
         } else {
-            exa.push_back(current);
+            unic.push_back(current);
             test = current;
         }
     }
@@ -34,7 +33,7 @@ void quest(deque<int> dq){
     for(deque<int>::size_type i = 0; i < dq.size(); i++){
         if(solI == -1){
             numI = dq[i];
-            for(int numE: exa){
+            for(int numE: unic){
                 if(numI == numE){
                     solI = i + 1;
                     break;
@@ -44,7 +43,7 @@ void quest(deque<int> dq){
         
         if(solD == -1){
             numD = dq[dq.size() - 1 - i];
-            for(int numE: exa){
+            for(int numE: unic){
                 if(numD == numE){
                     solD = i + 1;
                     break;
@@ -55,16 +54,15 @@ void quest(deque<int> dq){
 
     // Mostrando si se a encontrado y si es asi cual se encontro antes.
     string res;
-    if(solI == -1 && solD == -1) cout<<"NADA INTERESANTE";
-    else if (solI == solD) cout<<solD<<" "<<"CUALQUIERA";
-    else if(solI < solD)  cout<<solI<<" "<<"IZQUIERDA";
-    else cout<<solD<<" "<<"DERECHA";
+    if(solI == -1 && solD == -1) cout<<"NADA INTERESANTE\n";
+    else if (solI == solD) cout<<solD<<" "<<"CUALQUIERA\n";
+    else if(solI < solD)  cout<<solI<<" "<<"IZQUIERDA\n";
+    else cout<<solD<<" "<<"DERECHA\n";
 
     
 }
 
 bool solve(){
-    map<int, string> mapShirt;
     int n, id;
     // Numero de camisetas que la tienda tiene actualmente (n) en venta;
     cin>>n;
@@ -104,7 +102,7 @@ bool solve(){
         }
     }
 
-    cout<<"\n---\n";
+    cout<<"---\n";
     return true;
 }
 int main(){

@@ -23,6 +23,8 @@ bool resolve(){
 
     for(int i= 0; i < p - n;i++){
         num = pq.top() / 2;
+        if(pq.top() % 2 != 0) pq.push(num - 1);
+
         pq.pop();
         pq.push(num);
     }

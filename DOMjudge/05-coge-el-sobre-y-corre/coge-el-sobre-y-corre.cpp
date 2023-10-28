@@ -2,53 +2,49 @@
 #include <string>
 #include <queue>
 #include <vector>
-#include <sstream>
 using namespace std;
 
 
 bool solve(){
     int n, k;
+    // Numero de sobres que guarda (n)
+    // Numero de sobrees que tiene que cojer(k)
     cin>>n>>k;
     
-    if (n == 0 || k == 0) return false;
+    if (!cin) return false;
 
-        string test;
-        cin.ignore();
-        getline(cin, test);
+    priority_queue<int> pq;
+    vector<int> envelopes(n);
 
-        vector<int> testList;
-        istringstream iss(test);
+    for (int & cash : envelopes) {
+        cin >> cash;
+    }
 
-        int number;
-        while (iss >> number) {
-            testList.push_back(number);
-        }
-        
-        priority_queue<int> pq;
-        vector<int> v;
-        int it= 0;
-        for(int element : testList){
-            if(it == k){
-                it= 0;
-                v.push_back(pq.top());
-                while (!pq.empty()){
-                    pq.pop();
-                }
+    int x = 0, it = 0;
+    // Las posibilidades son las veces que puede elejir entre los k sobres.
+
+    int posibilitis = n - k + 1;
+
+    while(posibilitis > 0){
+        // EL dinero a lejir cada k casos.
+        int cash = envelopes[it];
+
+        if (static_cast<int>(pq.size()) == k) {
+            x++;
+            it = x;
+            // Elije el numero mas alto entre las k opciones, y busca desde el siguiente número.
+            if(posibilitis == 1) cout<<pq.top()<<"\n";
+            else cout<<pq.top()<<" ";
+            while (!pq.empty()){
+                pq.pop();
             }
-            pq.push(element);
-            it++;
+            posibilitis--;
+            continue;
         }
 
-        while (!pq.empty()) {
-            v.push_back(pq.top());
-            pq.pop();
-        }
-
-        for(int result : v){
-            cout<<result<<" ";
-        }
-
-        cout<<"\n";
+        pq.push(cash);
+        it++;
+    }
     return true;
 }
 

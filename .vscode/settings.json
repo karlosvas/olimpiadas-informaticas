@@ -58,6 +58,7 @@
         "queue": "cpp",
         "stack": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "cstdarg": "cpp"
     }
 }
