@@ -7,9 +7,12 @@
 using namespace std;
 
 bool solve() {
+    // crea las camisetas y sus identificadores.
     int n, id;
     cin >> n;
     int i = 0, d = 0;
+
+    // Diccioanrio de pares que no se repite.
     map<int, set<int>> dicc;
     deque<int> dq;
     set<int> unique;
