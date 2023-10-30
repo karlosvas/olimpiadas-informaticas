@@ -33,7 +33,7 @@ int V, A;
 cin>>V>>A;
 
 Grafo g(V); // 0-indexed.
-// Da tantas vuelyas como aristas.
+// Da tantas vueltas como aristas.
 for(int i = 0; i < A; ++i){
     int u, v;
     cin>>u>>v;
