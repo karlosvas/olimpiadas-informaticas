@@ -22,11 +22,10 @@ bool solve() {
         int id; cin >> id;
         dq.push_back(id);
         auto & pos = dicc[id];
-        // Añade las ids y guarda el valor de la posicion del diccionario en el indice lde la id.
         if (pos.empty()) unique.insert(d);
-            // Si el conjunto esta vacio le agreag el valor.
+            // Si el conjunto esta vacio le agrega el valor.
         else if (pos.size() == 1) unique.erase(*pos.begin());
-            // Si el conjunto era de cardinal 1 le agregamos el valor.
+            // Si el conjunto no esta vacio lo borramos apora que no sea único.
         pos.insert(d);
         ++d;
     }

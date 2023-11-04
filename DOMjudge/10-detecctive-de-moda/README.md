@@ -59,3 +59,37 @@ del extremo se sustituirá por la palabra CUALQUIERA.
 Si en el momento de hacer una pregunta no hay ninguna camiseta con un estilo único en
 la tienda (o simplemente no hay camisetas), se escribirán las palabras NADA INTERESANTE.
 Al final de cada caso de prueba se escribirán tres guiones ---.
+
+Entrada de ejemplo
+2  
+5  
+8 5 9 23 8  
+9  
+P  
+I 22  
+P  
+I 23  
+D 5  
+D 22  
+P  
+I 9  
+P  
+5  
+2 1 3 1 2  
+5  
+P  
+i  
+P  
+D 2  
+P  
+
+## Salida de ejemplo
+2 CUALQUIERA  
+1 IZQUIERDA  
+5 CUALQUIERA  
+NADA INTERESANTE  
+---
+3 CUALQUIERA  
+1 DERECHA  
+2 IZQUIERDA  
+---

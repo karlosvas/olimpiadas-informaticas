@@ -24,7 +24,7 @@ int dfs(int v, vector<int> &cash) {
 bool solve() {
     // Personajes(n), Pares de amigos(m).
     int n, m; cin >> n >> m;
-    if (n == 0 || m == 0) return false;
+    if (!cin) return false;
 
     vector<int> cash;
     g.assign(n, {});
@@ -54,6 +54,7 @@ bool solve() {
             min += component_min;  
         }
     }
+    
     cout<<min<<"\n";
     return true;
 }

@@ -1,103 +1,91 @@
 #include <iostream>
-#include <string>
 #include <queue>
+#include <set>
+#include <map>
 
 using namespace std;
 
-void quest(deque<int> dq){
-    priority_queue<int> pq;
-    for(int num: dq){
-        pq.push(num);
-    }
-
-    // Guardar los que no se repitan.
-    int test= 0, count = 0;
-    deque<int> unic;
-
-    while (!pq.empty()) {
-        int current = pq.top();
-        pq.pop();
-
-        if (current == test) {
-            unic.pop_back();
-            count++;
-        } else {
-            unic.push_back(current);
-            test = current;
-        }
-    }
-
-    // Buscando cuando es la primera vez que un número no repetido coinciode para cada uno de los lados.
-    int solI = -1, solD = -1, numD, numI;
-
-    for(deque<int>::size_type i = 0; i < dq.size(); i++){
-        if(solI == -1){
-            numI = dq[i];
-            for(int numE: unic){
-                if(numI == numE){
-                    solI = i + 1;
-                    break;
-                }
-            }
-        }
-        
-        if(solD == -1){
-            numD = dq[dq.size() - 1 - i];
-            for(int numE: unic){
-                if(numD == numE){
-                    solD = i + 1;
-                    break;
-                }
-            }
-        }
-    }
-
-    // Mostrando si se a encontrado y si es asi cual se encontro antes.
-    string res;
-    if(solI == -1 && solD == -1) cout<<"NADA INTERESANTE\n";
-    else if (solI == solD) cout<<solD<<" "<<"CUALQUIERA\n";
-    else if(solI < solD)  cout<<solI<<" "<<"IZQUIERDA\n";
-    else cout<<solD<<" "<<"DERECHA\n";
-
-    
-}
-
 bool solve(){
-    int n, id;
+    int n, id; cin>>n;
+    int d = 0, i = 0;
     // Numero de camisetas que la tienda tiene actualmente (n) en venta;
-    cin>>n;
-    
+
+    if(!cin) return false;
+    map<int, set<int>> valores;
+    // Para verificar si es única.
+    set<int> unique;
     deque<int> dq;
-    for(int i = 0; i < n; i++){
-        // Identificadores de los estilos de las camisetas, mismo estilo = mismo identificador (id).
-        cin>>id;
+    // Identificadores de los estilos de las camisetas, mismo estilo = mismo identificador (id).
+    while (n--) {
+        int id; cin >> id;
+        // Se añade una nueva camiseta a la derecha.
         dq.push_back(id);
+        // Añade las ids y guarda el valor de el convunti en pos.
+        auto & pos = valores[id];
+        if (pos.empty()) unique.insert(d);
+            // Si el conjunto esta vacio le agrega el valor.
+        else if (pos.size() == 1) unique.erase(*pos.begin());
+    
+        pos.insert(d);
+        ++d;
     }
 
     // Numero de eventos(e)
     int e,num;
     cin>>e;
 
-    char c;
-    for(int i = 0; i < e; i++){
-        cin>>c;
-        switch (c){
-        case('I'):
+    while (e--){
+        char c; cin>>c;
+        if( c == 'P'){
+            if(unique.empty()){
+            cout<<"NADA INTERESANTE\n";
+            } else {
+                int solI = (*unique.begin()) -i + 1;
+                int solD = (*unique.rbegin());
+
+                if(solI < solD) cout<<solI<<" "<<"IZQUIERDA\n";
+                else if(solD < solI) cout<<solD<<" "<<"DERECHA\n";
+                else cout<<solD<<" "<<"CUALQUIERA\n"; 
+            }
+        } else if (c == 'I'){
+            int p = --i;
             cin>>num;
             dq.push_front(num);
-            break;
-        case('D'):
+            auto & pos = valores[num];
+
+            if (pos.empty()) unique.insert(num);
+            else if (pos.size() == 1) unique.erase(*pos.begin());
+
+            pos.insert(p);
+        } else if(c == 'D'){
+            int p = ++d;
             cin>>num;
             dq.push_back(num);
+            auto & pos = valores[num];
+
+            if (pos.empty()) unique.insert(num);
+            else if (pos.size() == 1) unique.erase(*pos.begin());
+
+            pos.insert(p);
             break;
-        case('i'):
+        } else if (c =='i'){
+            int p = i++;
             dq.pop_front();
+            int v = dq.front(); dq.pop_front();
+
+            auto & pos = valores[v];
+            pos.erase(p);
+            if (pos.size() == 1) unique.insert(*pos.begin());
+            else if (pos.empty()) unique.erase(p);
             break;   
-        case('d'):
-            dq.pop_back();
-            break;
-        case('P'):
-            quest(dq);
+        } else if (c == 'd'){
+            int p = --d;
+            int v = dq.back(); dq.pop_back();
+            
+            auto & pos = valores[v];
+            pos.erase(p);
+            if (pos.size() == 1) unique.insert(*pos.begin());
+            else if (pos.empty()) unique.erase(p);
             break;
         }
     }
@@ -106,11 +94,9 @@ bool solve(){
     return true;
 }
 int main(){
-    int cases;
-    cin>>cases;
-    while(cases > 0){
+    int cases; cin>>cases;
+    while(cases--){
         solve();
-        cases--;
     }
     return 0;
 }
