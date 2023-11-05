@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <vector>
 #include <string>
 
@@ -9,15 +8,15 @@ Grafo g;
 vector<bool> visit;
 
 int dfs(int v){
+    // Cuenta los adyacentes.
     visit[v] = true;
-    int res = 1;
-
+    int ad = 1;
     for(int arista : g[v]){
         if(!visit[arista]) {
-            res += dfs(arista);
+            ad += dfs(arista);
         }
     }
-    return res;
+    return ad;
 }
 
 bool solve(){
@@ -26,32 +25,42 @@ bool solve(){
     int n,m;
     cin>>n>>m;
 
-    if(!cin) false;
-    string lineId;
+    if(!cin) return false;
     g.assign(n, {} );
 
-    for (int i = 0; i < m; i++){
-        int first; cin>>first;
+    for (int i = 0; i < m; i++) {
+        int num = 0;
+        int a = 0;
 
-        for(int k = 0; k < first; k++){
-            // Añadimos cada entrada a g en ese índice.
-           int num; cin>>num;
-            g[i].push_back(num);
+        bool first = false;
+        int event; cin>>event;
+        while(event--){
+            // Hacemos las relaciones entre vectores.
+            cin>>a; a--;
+            
+            if(!first){
+                // Si es la primera vuelta lo guarda en num, para que en la siguiente haga la reclacion con el siguiente valor de a.
+                num = a;
+                first = true;
+            } else{
+                g[num].push_back(a);
+                g[a].push_back(num);
+                num = a;
+            }
         }
-
+        first = false;
     }
-
     
     // Cremos un grafo de boleanos inicializamos en false con n (Vectores), para estrablecer las relaciones.
-    visit.assign(n, false);
 
     for (int v= 0; v < n; v++){
-    // Recorre todos los vértices.
-        if (!visit[v]) {
-            int res = dfs(v);
-            cout<<res<<"\n";
-        }
-        // Cantidad de usuarios que termiann sabiendo la noticia.
+        // Recorre todos los vértices, y se reincician las visitas en cada vuelta para contyar las adyacentes de cada verice.
+        visit.assign(n, false);
+        int sol = dfs(v);
+
+        if(v == n -1) cout<<sol<<"\n";
+        else cout<<sol<<" ";
+        // Cantidad de usuarios (ADyacentes de v) que termiann sabiendo la noticia, si empieza a distribuirla v.
     }
 
     return true;
@@ -61,21 +70,3 @@ int main(){
     while(solve());
     return 0;
 }
-
-/*
-## Entrada de ejemplo
-7 5  
-3 2 5 4  
-0  
-2 1 2  
-1 1  
-2 6 7  
-
-4 2  
-1 1  
-1 3  
-
-## Salida de ejemplo
-4 4 1 4 4 2 2  
-1 1 1 1  
-*/
