@@ -60,7 +60,7 @@ Si en el momento de hacer una pregunta no hay ninguna camiseta con un estilo ún
 la tienda (o simplemente no hay camisetas), se escribirán las palabras NADA INTERESANTE.
 Al final de cada caso de prueba se escribirán tres guiones ---.
 
-Entrada de ejemplo
+## Entrada de ejemplo
 2  
 5  
 8 5 9 23 8  

@@ -3,59 +3,82 @@
 #include <vector>
 
 using namespace std;
+int white, black;
+
 using Grafo = vector<set<int>>;
 Grafo g;
-vector<pair<bool, bool>> visit;
+vector<pair<bool, char>> visit;
 
-// Grafo bipartito.
-using namespace std;
-
-int dfs(int v) {
+// Grafo bipartito en un recorrido en profundidad.
+bool dfs(int v, bool color) {
     visit[v].first = true;
-    int guardias = 0;
 
-    for(int w: g[v]){
-        // Empezando desde el 1, si el actual es igual que el anterior los dos son false.
-        if(!visit[w].first){
-
-            if(!visit[v].second && !visit[w].second){
-                visit[w].second = true;
-                ++guardias;
-            }
-            guardias += dfs(w);
-        }
+    // Le damos el color correspondiente a cada uno de los vértices.
+    if(color){
+        ++white;
+        visit[v].second = 'w';
+    }
+    else{ 
+        ++black;
+        visit[v].second = 'b';
     }
 
-    return guardias;
+    for(int w: g[v]){
+        // Alternamos el color al explorar nodos adyacentes, si el ciolor actual es igual a alguno de sus adyacentes, no es bipartito y devolbemos a dfs false para que el control pase a la llamda anterior.
+        if (visit[v].second == visit[w].second) return false;
+        if(!visit[w].first){
+            // Si no esta visitado llamamos a dfs para sus adyacentes, y le damos el color opuesto a el de la llamada actual.
+            // Si dfs es false, es porque no es bipartiro por lo que también retorna false para devolberle el control a la anterior, de esa manera terminar de forma recursiva.
+            if (!dfs(w, !color)) return false;
+        }
+    }
+    
+    return true;
 }
 
 bool solve(){
-    // Cruces (n)
-    // Calles entre cruces (c)
-    int n; cin>>n;
-    int c; cin>>c;
+    // Calles o vertices (N), Cruces o aristas (C).
+    int N, C; cin>>N>>C;
+
     if(!cin) return false;
 
-    g.assign(n,{});
-    visit.assign (n, {false, false});
+    // Grafo de N calles o vérices.
+    // Grafo de N vértices con pares de bool para saber si están visitados, y char para guardar de que color son.
+    g.assign(N,{});
+    visit.assign (N, {false, {}});
 
-    for (int i = 0; i< c;i++){
+    for (int k = 0; k< C;k++){
+        // Casos de prueba, con las conexiones entre calles.
         int a,b; cin>>a>>b;
         --a; --b;
         g[a].insert(b);
         g[b].insert(a);
     }
     
-    int total_g = 0;
-    for(int v= 0; v < n; v++){
+    // El valor minimo será la suma de el valor minimo de los colores en las componentes conexas.
+    bool gameover = false;
+    int min_conex = 0;
+    bool color = true;
+
+    for(int v= 0; v < N; v++){
         if(!visit[v].first){
-            total_g += dfs(v);
+            // Reiniciamos el contador de colores en cada componente conexa.
+            black = 0, white = 0;
+            if(!dfs(v, color)){
+                // Si dfs es false significa que no es bipartito, por lo que paramos de buscar. 
+                cout<<"IMPOSIBLE\n";
+                gameover = true;
+                break;
+            }else{
+                // Sumamos el color mínimo entre los colores en cada componente conexa.
+                min_conex += min(white, black);
+            }
         }
     }
-    
-    if(n == c) cout<<"IMPOSIBLE\n";
-    else cout<<total_g<<"\n";
-    return true;    
+
+    // Si no es game_over mostramos la suma de todos los minimos de las componentes conexas.
+    if(!gameover) cout<<min_conex<<"\n";
+    return true;
 }
 
 int main(){

@@ -24,9 +24,10 @@ int bfs(pair<int, int> O, pair<int, int> D){
                         int ny = y + incY[pos] * k;
                         if (0 <= nx && nx < X && 0 <= ny && ny < Y) {
                             // Si hay muro termina K para pasar a la siguiente posición.
-                            // Si en el jardin hay . la camara puede vigilarlo.
+                            // Si en el jardin hay cualquier otra cosa que no se #, la camara puede vigilarlo.
                             if(garden[ny][nx] == '#') break;
-                            else if(garden[ny][nx] == '.') garden[ny][nx] = 'X';
+                            else if(isdigit(garden[ny][nx])) continue;
+                            else garden[ny][nx] = 'X';
                         }
                     }
                 }
@@ -34,6 +35,8 @@ int bfs(pair<int, int> O, pair<int, int> D){
         }
     }
     
+    // Si la entrada esta vigilada termina de buscar.
+    if(garden[O.first][O.second] == 'X') return -1;
     // Creamos un vector de longitud Y*X, iniciado a -1.
     // Y creamos una cola de pares, en el que first = (y) e second = (x).
     vector<int> dist(Y*X, -1);
@@ -56,7 +59,7 @@ int bfs(pair<int, int> O, pair<int, int> D){
                 if (dist[w] == -1) {
                     // Si no ha sido visitada se suma 1, pregunta si es el detino o si es un camino valido, ni muro ni que este vigilado, y añade el nuevo par de (y,x) a la cola.
                     dist[w] = dist[y * X + x] + 1;
-                    if (garden[newCol][newRow] == garden[D.first][D.second]) return dist[w];
+                    if (garden[newCol][newRow] == garden[D.first][D.second] && garden[newCol][newRow] == 'P') return dist[w];
                     else if(garden[newCol][newRow] != '.') continue;
                     q.push({newCol, newRow});
                 }
