@@ -1,50 +1,73 @@
 #include <iostream>
-#include <map>
-#include <set>
+#include <unordered_map>
 #include <string>
+#include <set>
+#include <limits>
 using namespace std;
 
 bool solve(){
-    int N; cin>>N;
+    // Numero de jugadores(N)
+    int N; cin>>N; 
 
     if(N == 0) return false;
 
-    // Creamos un map para que cada jugador tenga su set de cartón con números sin repetir.
-    map<string, set<int>> players;
-    
+    // Map de cartones, y de cuantas veces aparece cada jugador es la longitud de su cartón.
+    // Utilizamos set para que se ordenen alfabeticamente los nombres de los jugadores.
+    unordered_map<int, set<string>> cardboard;
+    unordered_map<string, int> counts;
+
     for(int n = 0; n < N; n++){
-        // Nombre del jugador(name)
         string name; cin>>name;
-        // Números del cartón del jugador(x), cartón de cada jugador(carton).
         int x;
-        set<int> cardboard;
         while (cin>>x){
-            // Siempre que x, sea diferente de 0, se inserta en el cartón del jugador.
             if(x == 0) break;
-            cardboard.insert(x);
+            // Añadimos a que número pertenece cada nombre, y cuanta es la longitud de su cartón.
+            cardboard[x].emplace(name);
+            counts[name]++;
         }
-        players[name] = cardboard;
+    }
+    // Bombos(Q)
+    int Q; cin>>Q;
+
+    // Utilizamos un set para que se ordenen alfabeticamente los nombres de los ganadores.
+    bool end = false;
+
+    for(int q = 0; q < Q; q++){
+        // Numero de la bola(num_bol)
+        int num_bol; cin>>num_bol;
+
+        // Iterador que apunta a el numero que esta en los cartones.
+        auto it = cardboard.find(num_bol);
+        if(it != cardboard.end()) {
+
+            // Iterador que recorre los nombres de los jugadores que tienen ese número en su cartón.
+            for(auto names_it = it->second.begin(); names_it != it->second.end(); ++names_it){
+                auto name = *names_it; // Nombre del jugador en cada iteración.
+                auto next_it = next(names_it); // Iterador que apunta al siguiente nombre del jugador, para verificar si es el ultimo.
+
+                // Restamos 1 a la longitud del cartón, del jugador que disponga de ese numero, si es 0 es que ha cantado bingo.
+                if(--counts[name] == 0) {
+                    // Se amacena las personas que han cantado bingo en esa tirada de la bola.
+                    // Si su contador es 1 es posible que en la siguiente iteracion cante bingo tambien.
+                    if (next_it == it->second.end() || counts[*next_it] > 1) cout<<name<<"\n";
+                    else cout<<name<<" ";
+                    // Si alguien cantó bingo termina el juego.
+                    end = true;
+                }
+
+            }
+
+            if(end) break;
+        }
     }
 
-    // Número de bombos(Q).
-    int Q; cin>>Q;
-    for(int q = 0; q < Q; q++){
-        int n_bomb; cin>>n_bomb;
-        // Cada vez que se saca una bola, se comprueba si algún jugador tiene esa bola en su cartón.
-        for(auto[name, cardboard] : players){
-            // Si la bola está en el cartón del jugador en la iteración, se elimina del cartón.
-            if(players[name].find(n_bomb) != players[name].end()){
-                // Si el cartón del jugador se queda vacío, se muestra el nombre del jugador ganador.
-                if(players[name].size() == 1) cout<<name<<" ";
-                players[name].erase(n_bomb);
-            }
-        }
-    }
-    cout<<"\n";
-    
+    // Limpiamos el búfer de entrada antes de retornar de la función.
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
     return true;
 }
+
 int main(){
     while(solve());
     return 0;
 }
+
