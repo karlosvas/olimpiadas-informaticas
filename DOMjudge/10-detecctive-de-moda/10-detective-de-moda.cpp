@@ -2,97 +2,88 @@
 #include <queue>
 #include <set>
 #include <map>
-
 using namespace std;
 
+
 bool solve(){
-    // Numero de camisetas actualmente (n) en venta, iterador que a punta al primero (i) iterador que apunta al ultimo (d)
-    int n, id; cin>>n;
+    // Numero de camisetas actualmente (N) en venta, iterador que a punta al primero (i) iterador que apunta al ultimo (d)
+    int N; cin>>N;
     int i = 0, d = 0;
 
     if(!cin) return false;
 
-    // Verificamos si es única (Map de frecuencias).
-    deque<int> percha;
-    map<int, set<int>> valores;
-    // Conjuntos unicos.
+    // Verificamos si es única (Map de frecuencias), Mapa de valores con sus posiciones, Identificadores de los estilos de las camisetas.
+    deque<int> hanger;
+    map<int, set<int>> values;
     set<int> unique;
 
-    // Identificadores de los estilos de las camisetas.
-    while (n--) {
-        int id; cin >> id;
+    while (N--) {
+        int new_id; cin>>new_id;
         // Se añade una nueva camiseta a la derecha.
-        percha.push_back(id);
-        auto &pos = valores[id];
+        hanger.push_back(new_id);
 
-        // Si pos esta vacío le agrega el valor, si no apuntamos al, unico mas pequeño y lo eliminamos.
+        // Hacemos referencia a la posicion de value con esa id, a el set de values, si esta vacío es unico, si no lo borramos únicos.
+        auto& pos = values[new_id];
         if (pos.empty()) unique.insert(d);
         else if (pos.size() == 1) unique.erase(*pos.begin());
-    
+        // Actualizamos la nueva posicion.
         pos.insert(d);
         ++d;
     }
 
-    // Nuevos eventos(e)
-    int e,num; cin>>e;
-    while (e--){
+    // Nuevos de eventos(E)
+    int E; cin>>E;
+
+    while (E--){
+        
         char c; cin>>c;
+
         if( c == 'P'){
+            // Si no hay camisetas en la percha no hay nada itnteresante.
             if(unique.empty()){
-            cout<<"NADA INTERESANTE\n";
+                cout<<"NADA INTERESANTE\n";
             } else {
-                int distI = (*unique.begin()) -i + 1;
+                // Distancia desde el unico menor hasta la izquierda(distI) y lo mismo hacia la derecha(distD)
+                int distI = (*unique.begin()) - i + 1;
                 int distD = d - (*unique.rbegin());
 
-                if(distI < distD) cout<<distI<<" "<<"IZQUIERDA\n";
-                else if(distD < distI) cout<<distD<<" "<<"DERECHA\n";
-                else cout<<distI<<" "<<"CUALQUIERA\n"; 
+                // Mostramos la distancia menor.
+                if (distI < distD) cout<<distI<<" IZQUIERDA\n";
+                else if(distD < distI) cout<<distD<<" DERECHA\n";
+                else cout<<distI<<" CUALQUIERA\n"; 
             }
-        } else if (c == 'I'){
-            int p = --i;
-            cin>>num;
-            percha.push_front(num);
-            auto & pos = valores[num];
 
-            if (pos.empty()) unique.insert(num);
+        } else if (c == 'I' || c == 'D'){
+            // Nueva id de la comiseta(new_id), nueva posicion de i o d(new_position)
+            int new_id, new_position;
+            cin>>new_id;
+
+            // Si es I, lo agregamos por la izquierda a la percha y actualizamos la posicion, si es D por la derecha.
+            if (c == 'I') new_position = --i, hanger.push_front(new_id);
+            else new_position = d++, hanger.push_back(new_id);
+            
+            auto& pos = values[new_id];
+            if (pos.empty()) unique.insert(new_position);
             else if (pos.size() == 1) unique.erase(*pos.begin());
+            pos.insert(new_position);
 
-            pos.insert(p);
-        } else if(c == 'D'){
-            int p = ++d;
-            cin>>num;
-            percha.push_back(num);
-            auto & pos = valores[num];
+        } else if (c == 'i' || c == 'd'){
+            // Nueva id de la comiseta(new_id), nueva posicion de i o d(new_position)
+            int new_id, new_position;
+            
+            // Si es i, lo borramos por la izquierda de la percha y actualizamos la posicion, si es d por la derecha.
+            if (c == 'i') new_position = i++, new_id = hanger.front(), hanger.pop_front();
+            else new_position = --d, new_id = hanger.back(), hanger.pop_back();
 
-            if (pos.empty()) unique.insert(num);
-            else if (pos.size() == 1) unique.erase(*pos.begin());
-
-            pos.insert(p);
-            break;
-        } else if (c =='i'){
-            int p = i++;
-            percha.pop_front();
-            int v = percha.front(); percha.pop_front();
-
-            auto & pos = valores[v];
-            pos.erase(p);
-            if (pos.size() == 1) unique.insert(*pos.begin());
-            else if (pos.empty()) unique.erase(p);
-            break;   
-        } else if (c == 'd'){
-            // Posicion de d o ultmimo elemento popr la derecha (p)
-            int p = --d;
-            // Guardamos el ultimo elemento y lo borramos.
-            int v = percha.back(); percha.pop_back();
-            auto & pos = valores[v];
-            pos.erase(p);
-            if (pos.size() == 1) unique.insert(*pos.begin());
-            else if (pos.empty()) unique.erase(p);
-            break;
+            auto& pos = values[new_id];
+            pos.erase(new_position);
+            if (pos.empty()) unique.erase(new_position);
+            else if(pos.size() == 1) unique.insert(*pos.begin());
         }
     }
 
     cout<<"---\n";
+
     return true;
 }
 
