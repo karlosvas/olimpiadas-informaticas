@@ -9,3 +9,7 @@ Sitio oficial de las Olimpiadas Informáticas=> https://olimpiada-informatica.or
 Las tareas propuestas en las clases son subididas a **"DOOMjudge"**, un juez de codigo automático.
 Tambien existe otro juez automatico que noe s parte de las clases pero si de las olimiadas llamado **"Acepto el reto"**
 del que tambien intentare realizar ejercicios para mejorar con c++;
+
+## Scoreboard
+![olimpiadas-informaticas-score](./img/ol_score.png)
+
