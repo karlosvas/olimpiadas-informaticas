@@ -39,8 +39,8 @@ bool solve() {
   }
 
   int l = maxWeigth - 1, r = sumOfWeigths;
-  // Con un camion que soporte t No podemos hacer la mudanza en V viajes, cion
-  // umo que spoporte r SI.
+  // Con un camión que soporte t, No podemos hacer la mudanza en V viajes, con
+  // uno que spoporte r si podremos.
   while (l + 1 < r) {
     int m = (l + r) / 2;
     if (possible(m)) {

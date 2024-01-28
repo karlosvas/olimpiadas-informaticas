@@ -13,7 +13,7 @@ El problema del duende Gumersido.
 vector<int> v = {3, 7, 9, 10, 14, 15, 22, 29, 48, 50, 63, 68, 75, 80};
 int B = 10, l = 0, r = v.size() - 1;
 
-while (l <= r) {
+while (l + 1 < r) {
 int m = (l + r) / 2;
     if (v[m] == B) {
         cout << "Encontrado en la posicion " << m << "\n";
@@ -36,7 +36,7 @@ Primera posición del elemento buscado.
 vector<int> v = {3, 7, 9, 10, 14, 15, 22, 29, 48, 50, 63, 68, 75, 80};
 int N = 14, B = 10, l = -1, r = N;
 
-while (l <= r) {
+while (l + 1 < r) {
     int m = (l + r) / 2;
     if (v[m] < B) l = m;
     else r = m;
