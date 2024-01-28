@@ -65,18 +65,20 @@ if (r < N && v[r] == B) {
     cout << "No encontrado\n";
 ```
 
-### std::lower_bound
+### lower_bound
 
-````cpp
+```cpp
 template <class ForwardIterator, class T>
 ForwardIterator lower_bound(ForwardIterator first, ForwardIterator last, const T& val);
+```
+
 Retorna un iterador al primer elemento en el rango [first,last) que no es menor que el val.
 Se utiliza principalmente en contenedores ordenados como vectores o listas.
 
-*ForwardIterator*: Especifica el tipo del iterador que se utiliza para recorrer el rango.
-*first*: Es el iterador que apunta al inicio del rango.
-*last*: Es el iterador que apunta al final del rango.
-*val*: Es el valor que se está buscando.
+_ForwardIterator_: Especifica el tipo del iterador que se utiliza para recorrer el rango.
+_first_: Es el iterador que apunta al inicio del rango.
+_last_: Es el iterador que apunta al final del rango.
+_val_: Es el valor que se está buscando.
 
 La función busca el primer elemento en el rango que no es menor que val utilizando la comparación <. Retorna un iterador apuntando a esa posición.
 
@@ -98,4 +100,4 @@ Solo sabemos operaciones básicas (sumar, multiplicar, dividir o comparar) núme
       r = m;
   }
   cout << " La raiz cuadrada de " << N << " es " << l << "en " << i << " pasos" << "\n";
-````
+```
