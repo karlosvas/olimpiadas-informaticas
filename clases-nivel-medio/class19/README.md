@@ -30,7 +30,7 @@ Quiero comprarme un móvil. Puede ser un iPhone o un Samsung. Hay 8 modelos de i
 
 Si hay p formas de hacer una cosa y q formas de hacer otra, entonces hay p\*q formas de hacer ambas.
 
-Si se desea realizar uan actividad que consta de r pasos, donde el primer paso puede ser llevado a cabo de N1, formas, el segundo paso de N2 formas y el r-esimo de Ni fromas, la actividad pùede ser llevada a cabo de N(1)\*N(2)\*N(3)\*...\*Nr
+Si se desea realizar una actividad que consta de r pasos, donde el primer paso puede ser llevado a cabo de N1, formas, el segundo paso de N2 formas y el r-esimo de Ni fromas, la actividad pùede ser llevada a cabo de N(1)\*N(2)\*N(3)\*...\*Nr
 
 Si en el equipaje de tu último viaje te has llevado 3 pantalones y 8 camisetas, ¿Cuántos días puedes estar sin repetir combinación?
 3\*8 = 24
