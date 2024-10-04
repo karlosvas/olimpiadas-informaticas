@@ -1,5 +1,5 @@
 # olimpiadas-informaticas
-Clases impartidas por la **Universidad Complutense de Madrid**, este repositorio es utilizado para practicar en las Olimpiadas Informáticas 2023, mejorando y aprendiendo en C++, si encuentras algun fallo o alguna mejora en el código, estaría encantado de recibir sugerencias mediante issues.
+Clases impartidas por la **Universidad Complutense de Madrid**, este repositorio es utilizado para practicar en las Olimpiadas Informáticas curso 2023 y curso 2024, mejorando y aprendiendo en C++ y Java, si encuentras algun fallo o alguna mejora en el código, estaría encantado de recibir sugerencias mediante issues.
 
 Sitio oficial de las Olimpiadas Informáticas=> https://olimpiada-informatica.org/
 
@@ -15,5 +15,5 @@ del que tambien intentare realizar ejercicios.
 > [!IMPORTANT]
 > Las puntuaciones varían con el tiempo en base a los ejercicios realizados, y la rapidez con la que se contesten.
 
-## Scoreboard
+## Final scoreboard 2023
 ![olimpiadas-informaticas-score](./img/ol_score.png)
