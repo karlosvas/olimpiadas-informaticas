@@ -1,4 +1,4 @@
-package p64_LosParasoles;
+package p64LosParasoles;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

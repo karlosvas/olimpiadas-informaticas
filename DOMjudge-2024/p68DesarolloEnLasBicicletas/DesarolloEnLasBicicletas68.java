@@ -1,4 +1,4 @@
-package p68_DesarolloEnLasBicicletas;
+package p68DesarolloEnLasBicicletas;
 
 import java.io.FileNotFoundException;
 import java.util.PriorityQueue;

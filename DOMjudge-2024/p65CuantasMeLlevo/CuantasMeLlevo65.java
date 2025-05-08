@@ -1,4 +1,4 @@
-package p65_CuantasMeLlevo;
+package p65CuantasMeLlevo;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

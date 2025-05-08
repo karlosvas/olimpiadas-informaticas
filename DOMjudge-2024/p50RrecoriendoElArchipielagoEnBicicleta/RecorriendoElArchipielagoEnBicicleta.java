@@ -1,4 +1,4 @@
-package p50_RrecoriendoElArchipielagoEnBicicleta;
+package p50RrecoriendoElArchipielagoEnBicicleta;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

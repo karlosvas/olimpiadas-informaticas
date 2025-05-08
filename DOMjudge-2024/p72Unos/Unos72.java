@@ -1,4 +1,4 @@
-package p72_Unos;
+package p72Unos;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package p67_LaPiezaPerdida;
+package p67LaPiezaPerdida;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
