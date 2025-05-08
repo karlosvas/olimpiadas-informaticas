@@ -1,4 +1,4 @@
-package p73_LaCuerdaDeLaCometa;
+package p73LaCuerdaDeLaCometa;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

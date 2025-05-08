@@ -1,4 +1,4 @@
-package p66_CerosDelFactorial66;
+package p66CerosDelFactorial66;
 
 import java.util.Scanner;
 

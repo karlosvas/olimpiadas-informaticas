@@ -1,4 +1,4 @@
-package p57_VeinticincoAnos;
+package p57VeinticincoAnos;
 
 public class VeinticincoAnos57 {
 

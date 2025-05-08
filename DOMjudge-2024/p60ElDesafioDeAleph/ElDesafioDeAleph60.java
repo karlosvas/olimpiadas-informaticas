@@ -1,4 +1,4 @@
-package p60_ElDesafioDeAleph;
+package p60ElDesafioDeAleph;
 
 import java.util.Scanner;
 

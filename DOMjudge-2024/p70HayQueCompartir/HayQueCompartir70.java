@@ -1,4 +1,4 @@
-package p70_HayQueCompartir;
+package p70HayQueCompartir;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

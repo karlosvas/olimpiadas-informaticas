@@ -1,4 +1,4 @@
-package p71_VelasBinarias;
+package p71VelasBinarias;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package p61_ElChispometroCuantico;
+package p61ElChispometroCuantico;
 
 import java.io.*;
 
