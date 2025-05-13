@@ -1,4 +1,4 @@
-package p06_Tandem;
+package p06Tandem;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;

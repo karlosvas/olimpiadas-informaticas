@@ -1,3 +1,4 @@
+package p11TecladoEstopeadoo;
 import java.util.Scanner;
 
 // Enviado en C++ por Time Limit Exceeded en DOMjudge23

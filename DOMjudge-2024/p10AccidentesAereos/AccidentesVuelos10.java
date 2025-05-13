@@ -1,4 +1,4 @@
-package p10_AccidentesAereos;
+package p10AccidentesAereos;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package p07_EligiendoVagones;
+package p07EligiendoVagones;
 
 import java.io.BufferedReader;
 import java.io.IOException;

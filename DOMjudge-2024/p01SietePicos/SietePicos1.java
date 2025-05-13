@@ -1,4 +1,4 @@
-package p01_SietePicos;
+package p01SietePicos;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
