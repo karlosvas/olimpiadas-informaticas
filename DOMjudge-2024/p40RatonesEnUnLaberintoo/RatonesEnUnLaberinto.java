@@ -1,4 +1,4 @@
-package p40RatonesEnUnLaberinto;
+package p40RatonesEnUnLaberintoo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,4 +1,4 @@
-package p04_ElHombreDeLosSeisDedos;
+package p04ElHombreDeLosSeisDedos;
 
 import java.util.List;
 import java.util.ArrayList;

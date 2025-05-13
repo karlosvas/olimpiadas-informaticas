@@ -1,4 +1,4 @@
-package p09_DecodificacionDeMensajes;
+package p09DecodificacionDeMensajes;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

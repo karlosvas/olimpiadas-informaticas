@@ -1,4 +1,4 @@
-package p05_PiramidesDeFichasDeDomino;
+package p05PiramidesDeFichasDeDomino;
 import java.util.Scanner;
 
 public class Domino05 {

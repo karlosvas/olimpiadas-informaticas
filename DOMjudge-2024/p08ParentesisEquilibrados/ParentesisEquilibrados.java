@@ -1,4 +1,4 @@
-package p08_ParentesisEquilibrados;
+package p08ParentesisEquilibrados;
 
 import java.util.Scanner;
 import java.util.Stack;
