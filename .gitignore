@@ -2,3 +2,5 @@
 *.exe
 *.class
 *.txt
+*.zip
+bin
