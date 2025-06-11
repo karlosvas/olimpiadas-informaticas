@@ -1,3 +1,5 @@
+package p19DifundiendoUnRumor;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -28,8 +30,7 @@ public class DifundiendoUnRumor19 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // Entrada del usuario
-        while (solve(br, bw))
-            ;
+        while (solve(br, bw));
 
         // Mostramos lo resultados
         bw.flush();

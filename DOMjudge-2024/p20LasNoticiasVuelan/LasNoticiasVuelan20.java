@@ -1,3 +1,5 @@
+package p20LasNoticiasVuelan;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,8 +17,7 @@ public class LasNoticiasVuelan20 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        while (solve(br, bw))
-            ;
+        while (solve(br, bw));
         bw.flush();
     }
 

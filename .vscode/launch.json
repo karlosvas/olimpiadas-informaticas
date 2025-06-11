@@ -1,0 +1,471 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MilDoscientosSesentaDias",
+      "request": "launch",
+      "mainClass": "p31MilDoscientosSesentaDias.MilDoscientosSesentaDias",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ProductoDeIntervalos",
+      "request": "launch",
+      "mainClass": "p85ProductoDeIntervalos.ProductoDeIntervalos",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p96LigasEscolares",
+      "request": "launch",
+      "mainClass": "p96LigasEscolares.p96LigasEscolares",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p98EtiquetandoSobres",
+      "request": "launch",
+      "mainClass": "p98EtiquetandoSobres.p98EtiquetandoSobres",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "GirarONoGirar",
+      "request": "launch",
+      "mainClass": "p99GirarONoGirar.GirarONoGirar",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ClassName",
+      "request": "launch",
+      "mainClass": "p99GirarONoGirar.ClassName",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Historigrama62",
+      "request": "launch",
+      "mainClass": "p62Historigrama.Historigrama62",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "CampamentoDeVerano",
+      "request": "launch",
+      "mainClass": "p48CampamentoDeVerano.CampamentoDeVerano",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "PorLosAnillosDeSaturno",
+      "request": "launch",
+      "mainClass": "p41PorLosAnillosDeSaturno.PorLosAnillosDeSaturno",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "PetrolerosUndidos",
+      "request": "launch",
+      "mainClass": "p47PetrolerosUnidos.PetrolerosUndidos",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p76LaFiestaDeGraduacion",
+      "request": "launch",
+      "mainClass": "p76LaFiestaDeGraduacion.p76LaFiestaDeGraduacion",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p39NavegandoSinTeclado",
+      "request": "launch",
+      "mainClass": "p38NavegandoSinTeclado.p39NavegandoSinTeclado",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p39NavegandoSinTeclado",
+      "request": "launch",
+      "mainClass": "p39NavegandoSinTeclado.p39NavegandoSinTeclado",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p38RapidEats",
+      "request": "launch",
+      "mainClass": "p38RapidEats.p38RapidEats",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "p37CamionesDeReparto",
+      "request": "launch",
+      "mainClass": "p37CamionesDeReparto.p37CamionesDeReparto",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "p75Aibofobia.Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "p75_Aibofobia.Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Erasmus03",
+      "request": "launch",
+      "mainClass": "p03Erasmus03.Erasmus03",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Erasmus03",
+      "request": "launch",
+      "mainClass": "p03_Erasmus03.Erasmus03",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "VaDeModas02",
+      "request": "launch",
+      "mainClass": "p02VaDeModas.VaDeModas02",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "VaDeModas02",
+      "request": "launch",
+      "mainClass": "p02_VaDeModas.VaDeModas02",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "SietePicos1",
+      "request": "launch",
+      "mainClass": "p01SietePicos.SietePicos1",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "SietePicos1",
+      "request": "launch",
+      "mainClass": "p01_SietePicos.SietePicos1",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "CuantasMeLlevo65",
+      "request": "launch",
+      "mainClass": "p65_CuantasMeLlevo.CuantasMeLlevo65",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LaFiestaDeGraduacion76",
+      "request": "launch",
+      "mainClass": "p76_LaFiestaDeGraduacion.LaFiestaDeGraduacion76",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "p75_aibofobia.Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "SietePicos1",
+      "request": "launch",
+      "mainClass": "SietePicos01.SietePicos1",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Erasmus",
+      "request": "launch",
+      "mainClass": "Erasmus",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "RecorriendoElArchipielagoEnBicicleta",
+      "request": "launch",
+      "mainClass": "RecorriendoElArchipielagoEnBicicleta",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LaFiestaDeGraduacion76",
+      "request": "launch",
+      "mainClass": "LaFiestaDeGraduacion76",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia",
+      "request": "launch",
+      "mainClass": "Aibofobia.Aibofobia",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "TiroAlPatindromo",
+      "request": "launch",
+      "mainClass": "TiroAlPatindromo.TiroAlPatindromo",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "Aibofobia75.Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Aibofobia75",
+      "request": "launch",
+      "mainClass": "agareofobia.Aibofobia75",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LaCuerdaDeLaCometa",
+      "request": "launch",
+      "mainClass": "LaCuerdaDeLaCometa.LaCuerdaDeLaCometa",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "DesarolloEnLasBicicletas68",
+      "request": "launch",
+      "mainClass": "DesarolloEnLasBicicletas.DesarolloEnLasBicicletas68",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Histograma62",
+      "request": "launch",
+      "mainClass": "Histograma62.Histograma62",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "HayQueCompartir70",
+      "request": "launch",
+      "mainClass": "HayQueCompartir70.HayQueCompartir70",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "VelasBinarias71",
+      "request": "launch",
+      "mainClass": "VelasBinarias71.VelasBinarias71",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Unos72",
+      "request": "launch",
+      "mainClass": "Unos71.Unos72",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Unos71",
+      "request": "launch",
+      "mainClass": "Unos71.Unos71",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Hola",
+      "request": "launch",
+      "mainClass": "unos71.Hola",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Hola",
+      "request": "launch",
+      "mainClass": "Hola",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LaPiezaPerdida64",
+      "request": "launch",
+      "mainClass": "LaPiezaPerdida64.LaPiezaPerdida64",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "CuantasMeLlevo65",
+      "request": "launch",
+      "mainClass": "CuantasMeLlevo65.CuantasMeLlevo65",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Ceros66",
+      "request": "launch",
+      "mainClass": "Ceros.Ceros66",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Ceros65",
+      "request": "launch",
+      "mainClass": "Ceros.Ceros65",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Ceros",
+      "request": "launch",
+      "mainClass": "Ceros.Ceros",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Ceros",
+      "request": "launch",
+      "mainClass": "Ceros",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Histograma62",
+      "request": "launch",
+      "mainClass": "Histograma.Histograma62",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ElDesafioDeAleph60",
+      "request": "launch",
+      "mainClass": "ElDesafioDeAleph.ElDesafioDeAleph60",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ElDesafioDeAleph61",
+      "request": "launch",
+      "mainClass": "ElDesafioDeAleph.ElDesafioDeAleph61",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ElChispometroCuantico",
+      "request": "launch",
+      "mainClass": "ElChispometroCuantico.ElChispometroCuantico",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ChisporroteoQuantico",
+      "request": "launch",
+      "mainClass": "ElChispometroCuantico.ChisporroteoQuantico",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LosParasoles64",
+      "request": "launch",
+      "mainClass": "LosParasoles.LosParasoles64",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "AQueHoraPasaElProximoTren54",
+      "request": "launch",
+      "mainClass": "AQueHoraPasaElProximoTren.AQueHoraPasaElProximoTren54",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "VeinticincoAnos57",
+      "request": "launch",
+      "mainClass": "VeinticincoAnos.VeinticincoAnos57",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "VeinicincoAnos57",
+      "request": "launch",
+      "mainClass": "VeinticincoAnos.VeinicincoAnos57",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ColeccionandoComics36",
+      "request": "launch",
+      "mainClass": "ColeccionandoComics36.ColeccionandoComics36",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "ColeccionandoComics",
+      "request": "launch",
+      "mainClass": "ColeccionandoComics36.ColeccionandoComics",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "LosNumerosDeBacon",
+      "request": "launch",
+      "mainClass": "LosNumerosBacon35.LosNumerosDeBacon",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "MenudoMarron",
+      "request": "launch",
+      "mainClass": "MenudoMarron34.MenudoMarron",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "type": "java",
+      "name": "Ejemplo",
+      "request": "launch",
+      "mainClass": "MenudoMarrron.Ejemplo",
+      "projectName": "olimpiadas-informaticas_e09f2f49"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Karlos/Desktop/repos/olimpiadas-informaticas/algorithms/cpp",
+      "program": "c:/Users/Karlos/Desktop/repos/olimpiadas-informaticas/algorithms/cpp/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
