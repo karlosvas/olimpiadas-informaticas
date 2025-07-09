@@ -24,8 +24,12 @@ del que también intentare realizar ejercicios.
 ![olimpiadas-informaticas-score-2023](./img/ol_score-2023.png)
 
 > [!NOTE]
-> 📖 Todos los ejercicios realizados en 2024 se realizarán en la medida de lo posible en Java. En este curso no hay apuntes debido a que se parece a lo realizado el año pasado, además de que este año están siendo más prácticos que teóricos.
+> 📖 Todos los ejercicios realizados en 2024-2025 se realizarán en la medida de lo posible en Java. En este curso no hay apuntes debido a que se parece a lo realizado el año pasado, además de que este año están siendo más prácticos que teóricos.
 
-## Actual scoreboard 2024
+## Scoreboard 2024
 
 ![olimpiadas-informaticas-score-2024](./img/ol_score-2024.png)
+
+## Scoreboard 2025
+
+![olimpiadas-informaticas-score-2025](./img/ol_score-2025.png)
